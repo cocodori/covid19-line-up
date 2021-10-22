@@ -2,8 +2,7 @@ package com.lineup.covid19lineup.controller.api;
 
 import com.lineup.covid19lineup.constant.PlaceType;
 import com.lineup.covid19lineup.dto.APIDataResponse;
-import com.lineup.covid19lineup.dto.PlaceDTO;
-import org.springframework.stereotype.Controller;
+import com.lineup.covid19lineup.dto.PlaceResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,10 +11,10 @@ import java.util.List;
 @RequestMapping("/api")
 public class APIPlaceController {
     @GetMapping("/places")
-    public APIDataResponse<List<PlaceDTO>> getPlaces() {
+    public APIDataResponse<List<PlaceResponse>> getAllPlace() {
         return APIDataResponse.of(
                 List.of(
-                        PlaceDTO.of(
+                        PlaceResponse.of(
                                 PlaceType.COMMON,
                                 "배트민턴장",
                                 "강남구 강남대로1234",
@@ -33,12 +32,12 @@ public class APIPlaceController {
     }
 
     @GetMapping("/places/{placeId}")
-    public APIDataResponse<PlaceDTO> getPlace(@PathVariable Integer placeId) {
+    public APIDataResponse<PlaceResponse> getPlace(@PathVariable Integer placeId) {
         if (placeId.equals(2))
             return APIDataResponse.of(null);
 
         return APIDataResponse.of(
-                PlaceDTO.of(
+                PlaceResponse.of(
                         PlaceType.COMMON,
                         "배트민턴장",
                         "강남구 강남대로1234",

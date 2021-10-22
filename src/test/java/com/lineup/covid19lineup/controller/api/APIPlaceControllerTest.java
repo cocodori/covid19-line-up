@@ -21,9 +21,9 @@ class APIPlaceControllerTest {
         this.mvc = mvc;
     }
 
-    @DisplayName("[API][GET] 장소 리스트 조회")
+    @DisplayName("[API][GET] 장소 리스트 조회 - 장소 리스트 데이터를 담은 표준 API 출력")
     @Test
-    void givenNothing_whenRequestPlaces_thenReturnsListOfPlacesInStandardResponse() throws Exception {
+    void givenNothing_whenRequestingPlaces_thenReturnsPlacesInStandardResponse() throws Exception {
         //given
 
         //when
