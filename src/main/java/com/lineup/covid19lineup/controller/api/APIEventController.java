@@ -1,5 +1,11 @@
 package com.lineup.covid19lineup.controller.api;
 
+import com.lineup.covid19lineup.constant.ErrorCode;
+import com.lineup.covid19lineup.dto.APIErrorResponse;
+import com.lineup.covid19lineup.exception.GeneralException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +25,7 @@ public class APIEventController {
 
     @GetMapping("/events/{eventId}")
     public String getEvent(@PathVariable Integer eventId) {
-        return "eventId: "+ eventId;
+        return "eventId: " + eventId;
     }
 
     @PutMapping("/events/{eventId}")
